@@ -1,0 +1,59 @@
+# Routes
+
+
+GET        /drivers/all/                     controllers.DriverController.getAllDrivers()
+GET        /drivers/:driverId/               controllers.DriverController.getDriver( driverId : String)
+GET        /drivers/search/:operation/:query               controllers.DriverController.search(query : String, operation : String)
+GET        /drivers/:driverId/selectcar/:carId               controllers.DriverController.selectSelfCar( driverId : String, carId : String)
+GET        /drivers/:driverId/deselectcar/:carId               controllers.DriverController.deselectACar( driverId : String, carId : String )
+DELETE     /drivers/:driverId/               controllers.DriverController.deleteDriver( driverId : String)
+PUT        /drivers/:driverId/               controllers.DriverController.updateDriver( driverId : String)
+
+
+POST       /drivers/                        controllers.DriverController.createDriver()
+
+GET        /                                 controllers.HomeController.index()
+
+
+# Swagger
+GET        /api-docs.json                    controllers.ApiHelpController.getResources
+GET        /api-docs.json/auth               controllers.ApiHelpController.getResource(path = "/auth")
+GET        /api-server/api-docs.json         controllers.ApiHelpController.getResources
+GET        /api-server/api-docs.json/auth    controllers.ApiHelpController.getResource(path = "/auth")
+GET        /docs                             controllers.HomeController.swagger()
+
+
+
+
+OPTIONS    /*all                             controllers.HomeController.preflight(all)
+# Map static resources from the /public folder to the /assets URL path
+GET        /api-server/assets/*file          controllers.Assets.at(path="/public", file)
+GET        /assets/*file                     controllers.Assets.at(path="/public", file)
+
+
+GET        /cars/:carId/               controllers.CarController.getCar( carId : String)
+GET        /cars/all/               controllers.CarController.getAllCars()
+DELETE     /cars/:carId/               controllers.CarController.deleteCar( carId : String)
+PUT        /cars/:carId/               controllers.CarController.updateCar( carId : String)
+
+
+POST       /cars/                        controllers.CarController.createCar()
+
+#GET        /                                 controllers.HomeController.index()
+
+
+
+# Swagger
+GET        /api-docs.json                    controllers.ApiHelpController.getResources
+GET        /api-docs.json/auth               controllers.ApiHelpController.getResource(path = "/auth")
+GET        /api-server/api-docs.json         controllers.ApiHelpController.getResources
+GET        /api-server/api-docs.json/auth    controllers.ApiHelpController.getResource(path = "/auth")
+GET        /docs                             controllers.HomeController.swagger()
+
+
+
+
+OPTIONS    /*all                             controllers.HomeController.preflight(all)
+# Map static resources from the /public folder to the /assets URL path
+GET        /api-server/assets/*file          controllers.Assets.at(path="/public", file)
+GET        /assets/*file                     controllers.Assets.at(path="/public", file)
